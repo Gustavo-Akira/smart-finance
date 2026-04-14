@@ -8,10 +8,12 @@ data class Expense(
     val id: ExpenseId,
     val description: String,
     val amount: BigDecimal,
+    val category: String,
     val occurredAt: Instant,
 ) : AggregateRoot {
     init {
         require(description.isNotBlank()) { "description must not be blank" }
         require(amount >= BigDecimal.ZERO) { "amount must not be negative" }
+        require(category.isNotBlank()) { "category must not be blank" }
     }
 }

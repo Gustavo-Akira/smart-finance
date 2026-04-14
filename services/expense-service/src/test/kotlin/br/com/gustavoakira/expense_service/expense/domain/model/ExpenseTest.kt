@@ -14,6 +14,20 @@ class ExpenseTest {
                 id = ExpenseId.new(),
                 description = "",
                 amount = BigDecimal.ONE,
+                category = "safsaf",
+                occurredAt = Instant.now(),
+            )
+        }
+    }
+
+    @Test
+    fun `should not allow blank category`() {
+        assertFailsWith<IllegalArgumentException> {
+            Expense(
+                id = ExpenseId.new(),
+                description = "",
+                amount = BigDecimal.ONE,
+                category = "safsaf",
                 occurredAt = Instant.now(),
             )
         }

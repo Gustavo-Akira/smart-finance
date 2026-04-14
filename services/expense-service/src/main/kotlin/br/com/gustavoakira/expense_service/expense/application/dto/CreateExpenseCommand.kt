@@ -6,5 +6,6 @@ import java.time.Instant
 data class CreateExpenseCommand(
     val description: String,
     val amount: BigDecimal,
+    val category: String,
     val occurredAt: Instant,
 )
